@@ -1,0 +1,16 @@
+apply plugin: 'java'
+
+repositories {
+	mavenCentral()
+	maven {
+		url 'http://repository.cloudera.com/cloudera/repo'
+	}
+}
+
+dependencies {
+	compile "org.apache.sentry:sentry-provider-common:$sentryVersion-cdh${cdhVersion}"
+	compile "org.apache.hadoop:hadoop-common:$hadoopVersion-cdh${cdhVersion}"
+	compile "log4j:log4j:1.2.17"
+    
+    testCompile "junit:junit:4.11"
+}
